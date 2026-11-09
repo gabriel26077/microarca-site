@@ -9,5 +9,9 @@ Este repositório reúne a página pública e os documentos do projeto.
 
 ## Documentos
 
-A Política de Privacidade ainda está em preparação. Esta página não substitui
-esse documento e ainda não deve ser cadastrada como política na Play Console.
+- [Política de Privacidade](https://gabriel26077.github.io/microarca-site/privacidade/)
+- [Termos de Uso](https://gabriel26077.github.io/microarca-site/termos/)
+
+As fontes revisadas ficam em `documentos/`. Execute `python gerar_site.py`
+na pasta de trabalho para gerar as páginas estáticas e as cópias locais
+incluídas no aplicativo. Rascunhos e notas internas ficam fora do Git.
