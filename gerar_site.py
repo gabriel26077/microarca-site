@@ -20,7 +20,7 @@ def page(title, content, prefix):
 <header><a href="{prefix}index.html">✨ MicroARCA</a><nav aria-label="Documentos"><a href="{prefix}privacidade/">Privacidade</a><a href="{prefix}termos/">Termos de uso</a></nav></header>
 <main>{content}</main><footer>Gabriel Sebastião do Nascimento Neto · <a href="mailto:gabrielsebastiao321dev@gmail.com">Contato e privacidade</a></footer></body></html>'''
 
-for document, title in [('privacidade', 'Política de Privacidade'), ('termos', 'Termos de Uso')]:
+for document, title in [('privacidade', 'Política de Privacidade'), ('termos', 'Termos de Uso'), ('exclusao', 'Solicitar exclusão de dados')]:
     source = (site / 'documentos' / f'{document}.md').read_text(encoding='utf-8')
     blocks = []
     for block in source.strip().split('\n\n'):
@@ -40,7 +40,8 @@ for document, title in [('privacidade', 'Política de Privacidade'), ('termos', 
     plain = re.sub(r'^#{1,2} ', '', plain, flags=re.M).replace('**', '')
     plain = '\n\n'.join(block if block.startswith('- ') else ' '.join(block.splitlines()) for block in plain.split('\n\n'))
     plain = plain.replace('../privacidade/', 'https://gabriel26077.github.io/microarca-site/privacidade/')
-    (app_assets / f'{document}.txt').write_text(plain, encoding='utf-8')
+    if document != 'exclusao':
+        (app_assets / f'{document}.txt').write_text(plain, encoding='utf-8')
 
 home = '''<h1>Programar, experimentar, aprender.</h1>
 <p>O MicroARCA permite programar um ESP32 com MicroPython pelo celular Android, em blocos ou Python, e enviar programas por Bluetooth.</p>
