@@ -67,7 +67,11 @@ Bluetooth do kit a esses pedidos.
 O catálogo usa uma VPS da **Hostinger** e a rede de distribuição e proteção
 da **Cloudflare**. Esses serviços processam informações de conexão para
 entregar arquivos, manter o serviço e prevenir ataques. A Cloudflare também
-gera registros e métricas de tráfego e segurança. O servidor de arquivos do
+gera registros e métricas de tráfego e segurança, incluindo quantidade de
+acessos, erros e informações técnicas das requisições. A infraestrutura pode
+inferir uma região aproximada, como o país, a partir do endereço IP para
+estatísticas de tráfego e proteção do serviço. Isso não usa o GPS do celular.
+O servidor de arquivos do
 catálogo está configurado sem registro rotineiro de acessos HTTP; isso não
 elimina registros técnicos ou de segurança dos provedores.
 
